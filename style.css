@@ -28,7 +28,6 @@ body.dark-mode {
 
 /* Header */
 header {
-    /* background: linear-gradient(135deg, #0073e6, #002d66); */
     color: #181818;
     padding: 20px 0;
     position: fixed;
@@ -135,7 +134,6 @@ nav .nav-links li a:hover {
 
 /* Hero Section */
 .hero {
-    /* background-image: url('images/blue_bg_image.jpg'); */
     background-size: cover;
     background-position: center;
     height: 550px;
