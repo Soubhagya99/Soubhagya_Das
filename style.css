@@ -26,22 +26,6 @@ body.dark-mode {
     color: #f4f4f4;
 }
 
-:root {
-    --bg-color: #ffffff;
-    --text-color: #000000;
-    --primary-color: #0073e6;
-    --secondary-color: #f4f4f4;
-    --dark-bg-color: #1e1e1e;
-    --dark-text-color: #f4f4f4;
-    --dark-secondary-color: #333333;
-}
-
-body.dark-mode {
-    --bg-color: var(--dark-bg-color);
-    --text-color: var(--dark-text-color);
-    --secondary-color: var(--dark-secondary-color);
-}
-
 /* Header */
 header {
     /* background: linear-gradient(135deg, #0073e6, #002d66); */
@@ -129,7 +113,7 @@ nav .nav-links li a:hover {
     align-items: center;
 }
 
-.fa-sun:before, .fa-moon:before {
+.fa-sun::before, .fa-moon::before {
     content: "";
 }
   

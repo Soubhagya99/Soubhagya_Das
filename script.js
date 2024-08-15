@@ -1,45 +1,40 @@
 const toggleButton = document.getElementById('dark-light-toggle');
 const bodyElement = document.body;
+const backToTopButton = document.getElementById('back-to-top');
 
+// Theme toggle logic
 toggleButton.addEventListener('click', () => {
-  bodyElement.classList.toggle('dark-mode');
-  toggleButton.classList.toggle('fa-moon');
-  toggleButton.classList.toggle('fa-sun');
-  localStorage.setItem('theme', bodyElement.classList.contains('dark-mode') ? 'dark' : 'light');
+  const isDarkMode = bodyElement.classList.toggle('dark-mode');
+  toggleButton.classList.toggle('fa-moon', !isDarkMode);
+  toggleButton.classList.toggle('fa-sun', isDarkMode);
+  localStorage.setItem('theme', isDarkMode ? 'dark' : 'light');
 });
 
 document.addEventListener('DOMContentLoaded', () => {
   const savedTheme = localStorage.getItem('theme');
   if (savedTheme === 'dark') {
     bodyElement.classList.add('dark-mode');
-    toggleButton.classList.remove('fa-moon');
-    toggleButton.classList.add('fa-sun');
+    toggleButton.classList.replace('fa-moon', 'fa-sun');
   }
 });
 
+// Improved scroll handling with debounce
 let scrollTimeout;
-
-function handleScroll() {
-  clearTimeout(scrollTimeout);
-  scrollTimeout = setTimeout(() => {
-    const scrollPosition = window.scrollY;
-    const backToTopButton = document.getElementById('back-to-top');
-
-    if (scrollPosition > 300) {
-      document.body.classList.add('scrolled');
-    } else {
-      document.body.classList.remove('scrolled');
-    }
-  }, 100);
+function debounce(func, wait = 100) {
+  return function(...args) {
+    clearTimeout(scrollTimeout);
+    scrollTimeout = setTimeout(() => func.apply(this, args), wait);
+  };
 }
 
-window.addEventListener('scroll', handleScroll);
+window.addEventListener('scroll', debounce(() => {
+  const scrollPosition = window.scrollY;
+  document.body.classList.toggle('scrolled', scrollPosition > 300);
+}));
 
-document.getElementById('back-to-top').addEventListener('click', () => {
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
-  });
+// Smooth scroll to top
+backToTopButton.addEventListener('click', () => {
+  window.scrollTo({ top: 0, behavior: 'smooth' });
 });
 
 const starsContainer = document.createElement('div');
