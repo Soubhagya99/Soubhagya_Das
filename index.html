@@ -1,105 +1,269 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Soubhagya Das | Machine Learning Engineer</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta name="description" content="Soubhagya Das | Machine Learning Engineer Portfolio">
+    <title>Soubhagya Das | ML Engineer</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="icon" href="images/favicon.ico">
 </head>
+
 <body>
+
+    <!-- Header -->
     <header>
-        <div class="container">
-            <h1>Soubhagya Das</h1>
-            <h2>Machine Learning Engineer</h2>
-            <p>
-                <a href="tel:+919439928113">+91 9439928113</a> ⋄ 
-                <a href="mailto:soubhagya99.das@gmail.com">soubhagya99.das@gmail.com</a> ⋄ 
-                <a href="https://linkedin.com/in/soubhagya-das" target="_blank">LinkedIn</a>
-            </p>
-        </div>
+        <nav>
+            <div class="logo">
+                <h1>Soubhagya Das</h1>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#skills">Skills</a></li>
+                <li><a href="#experience">Experience</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#certifications">Certifications</a></li>
+                <li><a href="#education">Education</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+            <button class="toggle" aria-label="Toggle Dark/Light Mode">
+                <i class="fas fa-moon" id="dark-light-toggle"></i>
+            </button>
+        </nav>
     </header>
-    <div class="tabs">
-        <button class="tab-link" onclick="scrollToSection('objective')">Objective</button>
-        <button class="tab-link" onclick="scrollToSection('skills')">Skills</button>
-        <button class="tab-link" onclick="scrollToSection('experience')">Experience</button>
-        <button class="tab-link" onclick="scrollToSection('certificates')">Certificates</button>
-        <button class="tab-link" onclick="scrollToSection('education')">Education</button>
-    </div>
+
+    <!-- Main Content -->
     <main>
-        <section id="objective" class="tab-content">
-            <div class="container">
-                <h3>Objective</h3>
-                <p>Senior Analyst - MLE at Tiger Analytics with a strong background in Data Science, Cloud platforms, and Databricks. Known for problem-solving abilities, effective leadership, and a collaborative approach to teamwork. Ready to bring data-driven insights and solutions to your organization’s challenges.</p>
+        <!-- Home Section -->
+        <section id="home">
+            <div class="hero">
+                <p><img src="images/profile.jpg" alt="Soubhagya Das"></p>
+                <h2>Machine Learning Engineer</h2>
+                <p>Driving data-driven decision-making and innovative solutions.</p>
+                <div class="cta">
+                    <a href="https://drive.google.com/file/d/1jkN5QzFe_9oEmwxmPGha1snezUgKObXF/view?usp=sharing" download="Soubhagya_Das_Resume.pdf" class="cta-button">Download Resume</a>
+                    <a href="#contact" class="cta-button">Contact Me</a>
+                </div>
             </div>
         </section>
-        <section id="skills" class="tab-content">
-            <div class="container">
-                <h3>Technical Skills</h3>
-                <ul>
-                    <li>Programming Skills: Python, SQL, Version Control (Git, GitHub, Bitbucket)</li>
-                    <li>Data Analysis: Excel, Matplotlib, Seaborn, Interpretation, Performance monitoring</li>
-                    <li>Data Management: MySQL, Databricks, PySpark (Local Machine), Azure Data Factory</li>
-                    <li>Machine Learning: Algorithm Development, Machine Learning, ML Models, Predictive Modelling</li>
-                    <li>Cloud Computing: Azure, Databricks, Azure DevOps</li>
-                </ul>
+
+        <!-- About Section -->
+        <section id="about">
+            <h2>About Me</h2>
+            <div class="skills-container">
+                <div class="skill">
+                    <h3>Transforming Data into Value</h3>
+                    <p>I'm a highly motivated Machine Learning Engineer with a strong background in Data Science, Cloud Platforms, and Databricks. I leverage my expertise to drive data-driven decision-making and develop innovative solutions that tackle real-world challenges.</p>
+                    <h3>Motivations & Goals</h3>
+                    <p>I'm driven by the potential of Machine Learning to transform businesses and create a positive impact. My goal is to contribute to a team where I can continuously learn, apply my skills to solve complex problems, and develop innovative solutions that shape the future.</p>
+                </div>
+                <div class="skill">
+                    <h3>Key Skills & Experience Highlights</h3>
+                    <ul>
+                    <li>3+ years of experience in Machine Learning, including data analysis, model development, and deployment.</li>
+                    <li>Proven track record of increasing operational efficiency and reducing downtime through ML-powered solutions.</li>
+                    <li>Expertise in Python, SQL, Azure, Databricks, PySpark, and popular Machine Learning libraries.</li>
+                    <li>Adept at collaborating with cross-functional teams to identify opportunities for improvement and implement data-driven strategies.</li>
+                    <li>Passionate about staying up-to-date with the latest advancements in the field of Machine Learning.</li>
+                    </ul>
+                </div>    
             </div>
         </section>
-        <section id="experience" class="tab-content">
-            <div class="container">
-                <h3>Experience</h3>
-                <h4>Senior Analyst - MLE (07/2023 – Present)</h4>
-                <p>Tiger Analytics</p>
-                <ul>
-                    <li>Developed ML Core, an end-to-end platform for tracking use cases, offering real-time updates from data ingestion to model deployment including feature engineering and custom model training.</li>
-                    <li>Executed pivotal enhancements, introducing income logic to categorize users based on native platform income thresholds.</li>
-                    <li>Contributed to the Insurance project by implementing a robust logging system, elevating traceability and debugging capabilities.</li>
-                    <li>Collaborated with cross-functional teams to identify areas of improvement, leading to increased operational effectiveness.</li>
-                    <li>Mentored junior analysts, fostering professional development while enhancing overall team performance.</li>
-                </ul>
-                <h4>Analyst (07/2022 – 06/2023)</h4>
-                <p>Tiger Analytics</p>
-                <ul>
-                    <li>Analyzed key operational drivers’ impact on metrics such as water, electricity, and gas usage using Azure-integrated Databricks for advanced analytics.</li>
-                    <li>Utilized ONNX for model interoperability and deployment, streamlining the deployment process for use in diverse production environments.</li>
-                    <li>Led the development and implementation of the Unet model for image segmentation tasks.</li>
-                </ul>
+
+        <!-- Skills Section -->
+        <section id="skills">
+            <h2>Skills</h2>
+            <div class="skills-container">
+                <div class="skill">
+                    <img src="images/programming.png" class="certification-logo">
+                    <h3>Programming Languages</h3>
+                    <p>Python, SQL</p>
+                </div>
+                <div class="skill">
+                    <img src="images/merge.png" class="certification-logo">
+                    <h3>Version Control</h3>
+                    <p>Git, GitHub, Bitbucket</p>
+                </div>
+                <div class="skill">
+                    <img src="images/migration.png" class="certification-logo">
+                    <h3>Cloud Platforms</h3>
+                    <p>Azure, Databricks, Azure DevOps</p>
+                </div>
+                <div class="skill">
+                    <img src="images/database.png" class="certification-logo">
+                    <h3>Data Management</h3>
+                    <p>Databricks, PySpark, Azure Data Factory</p>
+                </div>
+                <div class="skill">
+                    <img src="images/monitor.png" class="certification-logo">
+                    <h3>Data Analysis</h3>
+                    <p>Excel, Matplotlib, Seaborn, Pandas</p>
+                </div>
+                <div class="skill">
+                    <img src="images/machine-learning.png" class="certification-logo">
+                    <h3>Machine Learning</h3>
+                    <p>Algorithm Development, ML Models, Predictive Modelling</p>
+                </div>
             </div>
         </section>
-        <section id="certificates" class="tab-content">
-            <div class="container">
-                <h3>Certificates</h3>
-                <ul>
-                    <li>
-                        <a href="https://credentials.databricks.com/89c141fb-4092-457e-8974-26a11635eba4" target="_blank">
-                            <i class="fas fa-certificate"></i> Databricks Certified Machine Learning Associate (07/2024 - 07/2026)
-                        </a>
-                    </li>
-                    <li>
-                        <a href="https://portal.itscredible.com/qr/905326715119" target="_blank">
-                            <i class="fas fa-certificate"></i> Tiger Analytics Certified Analytics Associate (09/2022 - Present)
-                        </a>
-                    </li>
-                </ul>
+
+        <!-- Experience Section -->
+        <section id="experience">
+            <h2>Experience</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <h3>Senior Analyst - MLE</h3>
+                    <h4>Tiger Analytics | July 2023 – Present</h4>
+                    <ul>
+                        <li>Developed MLCore, an end-to-end platform for real-time data updates, boosting processing efficiency by 70% and reducing downtime by 30% and errors by 25%.</li>
+                        <li>Introduced income logic for user categorization, ensuring efficient data flow for enhanced segmentation, leading to a 50% increase in targeted strategy effectiveness.</li>
+                        <li>Implemented a robust logging system for an insurance project, enhancing traceability and reducing manual debugging efforts by 40%, leading to a 15% faster resolution time.</li>
+                        <li>Collaborated with cross-functional teams to identify areas of improvement, leading to a 30% increase in operational effectiveness.</li>
+                        <li>Mentored junior analysts, fostering professional development and enhancing overall team performance.</li>
+                    </ul>
+                </div>
+                <div class="timeline-item">
+                    <h3>Analyst</h3>
+                    <h4>Tiger Analytics | July 2022 – June 2023</h4>
+                    <ul>
+                        <li>Analyzed and optimized key operational drivers using Azure-integrated Databricks, reducing cloud resource costs by 20% and increasing processing speed by 15%.</li>
+                        <li>Streamlined model deployment across diverse environments using ONNX, cutting deployment time by 40% and reducing errors by 20%.</li>
+                        <li>Led the development and implementation of the Unet model for image segmentation, enhancing data insights and decision-making.</li>
+                    </ul>
+                    <h3><img src="images/Tiger-Analytics_Logo.png" alt="Tiger-Analytics Logo" class="experience-logo"></h3>
+                </div>
             </div>
         </section>
-        <section id="education" class="tab-content">
-            <div class="container">
-                <h3>Education</h3>
-                <p>
-                    <img src="https://upload.wikimedia.org/wikipedia/en/b/b2/IIIT_Bhubaneswar_Logo.png" alt="IIIT Bhubaneswar Logo" class="education-logo">
-                    Bachelor of Technology<br>
-                    International Institute of Information Technology, Bhubaneswar, India<br>
-                    Graduated: 2022
-                </p>
+
+        <!-- Projects Section -->
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="projects-container">
+                <div class="project">
+                    <style>
+                        h3 {
+                            margin-bottom: 5px; /* Adjust the space below each heading */
+                        }
+                        ul {
+                            margin-top: 0px;
+                            margin-bottom: 10px; /* Adjust the space below each list */
+                        }
+                    </style>
+                    <h3>MLCore Development for Real-Time Data Processing</h3>
+                    <ul>
+                        <li>Spearheaded the creation of the MLCore platform, a comprehensive solution that manages the entire machine learning lifecycle—from data ingestion to model deployment. This platform automated real-time data processing, significantly improving data accuracy and processing speed.</li>
+                        <li>The platform’s modular design allowed for seamless integration of new features, such as enhanced data monitoring and real-time updates, leading to a 70% boost in overall data processing efficiency and a reduction in system downtime by 30%.</li>
+                        <li>This project was critical in setting a new standard for operational efficiency within the organization, directly impacting client satisfaction by ensuring faster, more reliable data-driven decisions.</li>
+                    </ul>
+                </div>
+                <div class="project">
+                    <h3>Unet Model for Image Segmentation</h3>
+                    <ul>
+                        <li>Led the development of a Unet model for image segmentation, improving data analysis accuracy and enabling advanced visual insights.</li>
+                        <li>The model’s deployment enhanced decision-making processes by providing more reliable image-based data.</li>
+                    </ul>
+                    <h3>Customer Segmentation with Azure Databricks</h3>
+                    <ul>
+                        <li>Built a customer segmentation model using Azure Databricks, improving marketing strategies and customer targeting by 30%.</li>
+                        <li>Automated data pipelines and model training processes, reducing manual workload and increasing accuracy.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications Section -->
+        <section id="certifications">
+            <h2>Certifications</h2>
+            <div class="certifications-container">
+                <div class="certification">
+                    <h3><img src="images/databricks.png" alt="Databricks Logo" class="certification-logo">Databricks Certified Machine Learning Associate</h3>
+                    <p><a href="https://credentials.databricks.com/89c141fb-4092-457e-8974-26a11635eba4" target="_blank" class="view-credential">View Credential</a> | Valid: July 2024 – July 2026</p>
+                </div>
+                <div class="certification">
+                    <h3><img src="images/ta.png" alt="Tiger Analytics Logo" class="certification-logo">Tiger Analytics Certified Analytics Associate</h3>
+                    <p><a href="https://portal.itscredible.com/qr/905326715119" target="_blank" class="view-credential">View Credential</a> |Issued: September 2022</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Education Section -->
+        <section id="education">
+            <h2>Education</h2>
+            <div class="education-container">
+                <div class="education">
+                    <img src="images/IIIT_Bhubaneswar_Logo.png" alt="IIIT Bhubaneswar Logo" class="education-logo">
+                    <h3>Bachelor of Technology in Electrical Telecommuniucation</h3>
+                    <p>International Institute of Information Technology, Bhubaneswar, India | Graduated: 2022</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact">
+            <h2>Contact Me</h2>
+            <form action="https://formspree.io/f/xgvwzwpz" method="POST">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="_replyto" placeholder="Your Email" required>
+
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" placeholder="Your Message" required></textarea>
+
+                <button type="submit">Send Message</button>
+            </form>
+            <div class="socials">
+                <a href="https://linkedin.com/in/soubhagya-das" target="_blank" aria-label="LinkedIn"><i><img src="images/linkedin.png" class="certification-logo"></i></a>
+                <a href="mailto:soubhagya99.das@gmail.com" aria-label="Email"><i><img src="images/email.png" class="certification-logo"></i></a>
             </div>
         </section>
     </main>
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Soubhagya Das. All rights reserved.</p>
+
+    <!-- Scroll to Top Button -->
+    <button id="back-to-top" aria-label="Scroll to Top">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <div class="mountain"></div>
+    <div class="mountain-shadow"></div>
+    <div class="mountain-1"></div>
+    <div class="mountain-shadow-1"></div>
+    <div class="mountain-2"></div>
+    <div class="mountain-shadow-2"></div>
+    <div class="stars"></div>
+    
+    <div id="background-wrap">
+        <div class="x1">
+            <div class="cloud"></div>
         </div>
+    
+        <div class="x2">
+            <div class="cloud"></div>
+        </div>
+    
+        <div class="x3">
+            <div class="cloud"></div>
+        </div>
+    
+        <div class="x4">
+            <div class="cloud"></div>
+        </div>
+    
+        <div class="x5">
+            <div class="cloud"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2024 Soubhagya Das. All Rights Reserved.</p>
     </footer>
-    <script src="scripts.js"></script>
+
+    <script src="script.js"></script>
 </body>
+
 </html>
