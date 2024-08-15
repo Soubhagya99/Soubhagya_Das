@@ -17,12 +17,13 @@ body {
     margin: 0;
     padding: 0;
     transition: background-color 0.3s ease, color 0.3s ease;
-    background-color: #7ce4ff;
+    background-image: linear-gradient(#f7cac3, #59d8f8);
     color: #333;
+    background-attachment: fixed;
 }
 
 body.dark-mode {
-    background-color: #121212;
+    background-image: linear-gradient(#031731, #121212);
     color: #f4f4f4;
 }
 
@@ -39,10 +40,14 @@ header {
     justify-content: space-between;
     align-items: center;
     transition: all 0.3s ease-in-out;
-    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
-    backdrop-filter: blur(30px); /* Blur the background */
-    -webkit-backdrop-filter: blur(30px); /* For Safari */
-    border-radius: 10px; /* Rounded corners */
+    background: rgba(255, 255, 255, 0.1);
+    /* Semi-transparent background */
+    backdrop-filter: blur(30px);
+    /* Blur the background */
+    -webkit-backdrop-filter: blur(30px);
+    /* For Safari */
+    border-radius: 10px;
+    /* Rounded corners */
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1), 0px -2px 5px rgba(255, 255, 255, 0.2);
 }
 
@@ -98,7 +103,7 @@ nav .nav-links li a:hover {
     opacity: 0;
     position: absolute;
 }
-  
+
 .checkbox-label {
     background-color: #111;
     width: 50px;
@@ -112,10 +117,11 @@ nav .nav-links li a:hover {
     align-items: center;
 }
 
-.fa-sun::before, .fa-moon::before {
+.fa-sun::before,
+.fa-moon::before {
     content: "";
 }
-  
+
 .checkbox-label .ball {
     background-color: #fff;
     width: 22px;
@@ -127,7 +133,7 @@ nav .nav-links li a:hover {
     transition: transform 0.2s linear;
 }
 
-.checkbox:checked + .checkbox-label .ball {
+.checkbox:checked+.checkbox-label .ball {
     transform: translateX(24px);
 }
 
@@ -150,16 +156,16 @@ nav .nav-links li a:hover {
     height: 250px;
     border-radius: 50%;
     margin-bottom: 20px;
-    border: 5px solid #fff;
+    border: 5px solid #757575;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
     animation: zoomIn 1.5s ease-in-out;
     transition: transform 0.3s ease-in-out;
 }
 
 .hero img:hover {
-    transform: scale(1.2);;
+    transform: scale(1.2);
     box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3);
-  }
+}
 
 .hero h2 {
     font-size: 2.5em;
@@ -238,7 +244,9 @@ section h2::after {
     border-radius: 2px;
 }
 
-section p, section h3, section h4 {
+section p,
+section h3,
+section h4 {
     text-align: center;
     margin-top: 20px;
     animation: slideUp 1.5s ease-in-out;
@@ -258,7 +266,11 @@ section ul {
     animation: slideUp 1.5s ease-in-out;
 }
 
-.skills-container, .timeline, .projects-container, .certifications-container, .education-container {
+.skills-container,
+.timeline,
+.projects-container,
+.certifications-container,
+.education-container {
     max-width: 1200px;
     margin: 0 auto;
     display: grid;
@@ -268,31 +280,49 @@ section ul {
 }
 
 /* Skill and Project Cards */
-.skill, .project, .certification, .education, .timeline-item {
+.skill,
+.project,
+.certification,
+.education,
+.timeline-item {
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
-    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
-    backdrop-filter: blur(40px); /* Blur the background */
-    -webkit-backdrop-filter: blur(40px); /* For Safari */
+    background: rgba(255, 255, 255, 0.1);
+    /* Semi-transparent background */
+    backdrop-filter: blur(40px);
+    /* Blur the background */
+    -webkit-backdrop-filter: blur(40px);
+    /* For Safari */
     border-radius: 10px;
 }
 
-.skill:hover, .project:hover, .certification:hover, .education:hover, .timeline-item:hover {
+.skill:hover,
+.project:hover,
+.certification:hover,
+.education:hover,
+.timeline-item:hover {
     transform: translateY(-10px);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
 
 /* Dark Mode */
-body.dark-mode .skill, body.dark-mode .project, body.dark-mode .certification, body.dark-mode .education, body.dark-mode .timeline-item {
+body.dark-mode .skill,
+body.dark-mode .project,
+body.dark-mode .certification,
+body.dark-mode .education,
+body.dark-mode .timeline-item {
     /* background: #333; */
     color: #f4f4f4;
     box-shadow: 0 5px 15px rgba(216, 216, 216, 0.233);
-    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
-    backdrop-filter: blur(50px); /* Blur the background */
-    -webkit-backdrop-filter: blur(50px); /* For Safari */
+    background: rgba(255, 255, 255, 0.1);
+    /* Semi-transparent background */
+    backdrop-filter: blur(50px);
+    /* Blur the background */
+    -webkit-backdrop-filter: blur(50px);
+    /* For Safari */
     border-radius: 10px;
 }
 
@@ -309,7 +339,8 @@ body.dark-mode .view-credential {
     color: #d97df0;
 }
 
-.view-credential:hover, .dark-mode .view-credential:hover {
+.view-credential:hover,
+.dark-mode .view-credential:hover {
     color: #e7765a;
 }
 
@@ -373,7 +404,8 @@ label {
     margin-bottom: 5px;
 }
 
-input, textarea {
+input,
+textarea {
     width: 100%;
     padding: 10px;
     margin-bottom: 20px;
@@ -382,7 +414,8 @@ input, textarea {
     transition: border-color 0.3s ease;
 }
 
-input:focus, textarea:focus {
+input:focus,
+textarea:focus {
     border-color: #0073e6;
 }
 
@@ -425,11 +458,16 @@ footer {
     text-align: center;
     padding: 20px 0;
     position: relative;
-    background: rgba(255, 255, 255, 0.1); /* Semi-transparent background */
-    backdrop-filter: blur(5px); /* Blur the background */
-    -webkit-backdrop-filter: blur(5px); /* For Safari */
-    border-radius: 10px; /* Rounded corners */
-    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    background: rgba(255, 255, 255, 0.1);
+    /* Semi-transparent background */
+    backdrop-filter: blur(5px);
+    /* Blur the background */
+    -webkit-backdrop-filter: blur(5px);
+    /* For Safari */
+    border-radius: 10px;
+    /* Rounded corners */
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    /* Subtle shadow */
 }
 
 .dark-mode footer {
@@ -442,27 +480,33 @@ footer p {
 }
 
 .dark-mode .mountain {
-    border-bottom: 350px solid #888; /* Adjust color as needed */
-  }
-  
+    border-bottom: 350px solid #888;
+    /* Adjust color as needed */
+}
+
 .dark-mode .mountain-shadow {
-    border-bottom: 350px solid #666; /* Adjust color as needed */
+    border-bottom: 350px solid #666;
+    /* Adjust color as needed */
 }
-  
+
 .dark-mode .mountain-1 {
-    border-bottom: 150px solid #999; /* Adjust color as needed */
+    border-bottom: 150px solid #999;
+    /* Adjust color as needed */
 }
-  
+
 .dark-mode .mountain-shadow-1 {
-    border-bottom: 150px solid #777; /* Adjust color as needed */
+    border-bottom: 150px solid #777;
+    /* Adjust color as needed */
 }
-  
+
 .dark-mode .mountain-2 {
-    border-bottom: 200px solid #999; /* Adjust color as needed */
+    border-bottom: 200px solid #999;
+    /* Adjust color as needed */
 }
-  
-.dark-mode .mountain-shadow-2{
-    border-bottom: 200px solid #777; /* Adjust color as needed */
+
+.dark-mode .mountain-shadow-2 {
+    border-bottom: 200px solid #777;
+    /* Adjust color as needed */
 }
 
 .dark-mode .stars {
@@ -474,7 +518,7 @@ footer p {
     pointer-events: none;
     z-index: -2;
 }
-  
+
 .dark-mode .star {
     position: fixed;
     width: 2px;
@@ -486,11 +530,11 @@ footer p {
 
 @media (prefers-color-scheme: dark) {
     .stars {
-      display: block;
+        display: block;
     }
-  
+
     .star {
-      background: white;
+        background: white;
     }
 }
 
@@ -499,6 +543,7 @@ footer p {
     0% {
         opacity: 0;
     }
+
     100% {
         opacity: 1;
     }
@@ -509,6 +554,7 @@ footer p {
         transform: translateX(-100%);
         opacity: 0;
     }
+
     100% {
         transform: translateX(0);
         opacity: 1;
@@ -520,6 +566,7 @@ footer p {
         transform: scale(0);
         opacity: 0;
     }
+
     100% {
         transform: scale(1);
         opacity: 1;
@@ -531,6 +578,7 @@ footer p {
         transform: translateY(20px);
         opacity: 0;
     }
+
     100% {
         transform: translateY(0);
         opacity: 1;
