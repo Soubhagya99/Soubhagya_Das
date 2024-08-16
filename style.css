@@ -86,10 +86,14 @@ nav .nav-links li a {
 }
 
 nav .nav-links li a:hover {
-    background: rgba(255, 255, 255, 0.2);
+    background: rgba(49, 49, 49, 0.2);
     border-radius: 5px;
 }
 
+.dark-mode .nav-links li a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 5px;
+}
 
 .dark-mode .nav-links li a {
     color: #fff;
@@ -207,9 +211,9 @@ nav .nav-links li a:hover {
         right: -100%;
         top: 70px;
         flex-direction: column;
-        width: 35%;
+        width: 30%;
         height: calc(100vh - 70px);
-        text-align: center;
+        text-align: right;
         transition: 0.3s;
         background: rgba(214, 214, 214, 0.9);
         backdrop-filter: blur(30px);
@@ -253,7 +257,6 @@ nav .nav-links li a:hover {
     padding: 10px;
     animation: fadeIn 2s ease-in-out;
     margin-top: 80px;
-    /* box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1); */
 }
 
 .hero img {
@@ -396,11 +399,8 @@ section ul {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
     background: rgba(255, 255, 255, 0.1);
-    /* Semi-transparent background */
     backdrop-filter: blur(40px);
-    /* Blur the background */
     -webkit-backdrop-filter: blur(40px);
-    /* For Safari */
     border-radius: 10px;
 }
 
@@ -419,15 +419,11 @@ body.dark-mode .project,
 body.dark-mode .certification,
 body.dark-mode .education,
 body.dark-mode .timeline-item {
-    /* background: #333; */
     color: #f4f4f4;
     box-shadow: 0 5px 15px rgba(216, 216, 216, 0.233);
     background: rgba(255, 255, 255, 0.1);
-    /* Semi-transparent background */
     backdrop-filter: blur(50px);
-    /* Blur the background */
     -webkit-backdrop-filter: blur(50px);
-    /* For Safari */
     border-radius: 10px;
 }
 
@@ -558,21 +554,15 @@ button[type="submit"]:hover {
 
 /* Footer */
 footer {
-    /* background-image: linear-gradient(to bottom right, #0073e6, #002d66); */
     color: #292929;
     text-align: center;
     padding: 20px 0;
     position: relative;
     background: rgba(255, 255, 255, 0.1);
-    /* Semi-transparent background */
     backdrop-filter: blur(5px);
-    /* Blur the background */
     -webkit-backdrop-filter: blur(5px);
-    /* For Safari */
     border-radius: 10px;
-    /* Rounded corners */
     box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
-    /* Subtle shadow */
 }
 
 .dark-mode footer {
@@ -586,32 +576,26 @@ footer p {
 
 .dark-mode .mountain {
     border-bottom: 350px solid #888;
-    /* Adjust color as needed */
 }
 
 .dark-mode .mountain-shadow {
     border-bottom: 350px solid #666;
-    /* Adjust color as needed */
 }
 
 .dark-mode .mountain-1 {
     border-bottom: 150px solid #999;
-    /* Adjust color as needed */
 }
 
 .dark-mode .mountain-shadow-1 {
     border-bottom: 150px solid #777;
-    /* Adjust color as needed */
 }
 
 .dark-mode .mountain-2 {
     border-bottom: 200px solid #999;
-    /* Adjust color as needed */
 }
 
 .dark-mode .mountain-shadow-2 {
     border-bottom: 200px solid #777;
-    /* Adjust color as needed */
 }
 
 .dark-mode .stars {
