@@ -211,9 +211,9 @@ nav .nav-links li a:hover {
         right: -100%;
         top: 70px;
         flex-direction: column;
-        width: 30%;
+        width: 35%;
         height: calc(100vh - 70px);
-        text-align: right;
+        text-align: left;
         transition: 0.3s;
         background: rgba(214, 214, 214, 0.9);
         backdrop-filter: blur(30px);
