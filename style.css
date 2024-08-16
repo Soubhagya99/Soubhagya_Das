@@ -207,7 +207,7 @@ nav .nav-links li a:hover {
         right: -100%;
         top: 70px;
         flex-direction: column;
-        width: 100%;
+        width: 35%;
         height: calc(100vh - 70px);
         text-align: center;
         transition: 0.3s;
