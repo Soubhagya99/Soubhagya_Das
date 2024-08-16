@@ -83,3 +83,34 @@ for (let i = 0; i < 100; i++) { // Adjust the number of stars as desired
 }
 
 document.body.appendChild(starsContainer);
+
+function reveal() {
+  var reveals = document.querySelectorAll(".reveal");
+  for (var i = 0; i < reveals.length; i++) {
+      var windowHeight = window.innerHeight;
+      var elementTop = reveals[i].getBoundingClientRect().top;
+      var elementVisible = 150;
+      if (elementTop < windowHeight - elementVisible) {
+          reveals[i].classList.add("active");
+      } else {
+          reveals[i].classList.remove("active");
+      }
+  }
+}
+
+window.addEventListener("scroll", reveal);
+
+const cursor = document.createElement('div');
+cursor.classList.add('cursor');
+document.body.appendChild(cursor);
+
+document.addEventListener('mousemove', e => {
+  cursor.setAttribute("style", "top: "+(e.pageY - 10)+"px; left: "+(e.pageX - 10)+"px;")
+})
+
+document.addEventListener('click', () => {
+  cursor.classList.add("expand");
+  setTimeout(() => {
+    cursor.classList.remove("expand");
+  }, 500)
+})
