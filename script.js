@@ -6,7 +6,7 @@ hamburger.addEventListener('click', () => {
   const isOpen = hamburger.classList.toggle('active');
   navControls.classList.toggle('active');
   document.body.classList.toggle('menu-open');
-  
+
   // Update aria-expanded attribute for accessibility
   hamburger.setAttribute('aria-expanded', isOpen);
 });
@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
 // Improved scroll handling with debounce
 let scrollTimeout;
 function debounce(func, wait = 100) {
-  return function(...args) {
+  return function (...args) {
     clearTimeout(scrollTimeout);
     scrollTimeout = setTimeout(() => func.apply(this, args), wait);
   };
@@ -87,14 +87,14 @@ document.body.appendChild(starsContainer);
 function reveal() {
   var reveals = document.querySelectorAll(".reveal");
   for (var i = 0; i < reveals.length; i++) {
-      var windowHeight = window.innerHeight;
-      var elementTop = reveals[i].getBoundingClientRect().top;
-      var elementVisible = 150;
-      if (elementTop < windowHeight - elementVisible) {
-          reveals[i].classList.add("active");
-      } else {
-          reveals[i].classList.remove("active");
-      }
+    var windowHeight = window.innerHeight;
+    var elementTop = reveals[i].getBoundingClientRect().top;
+    var elementVisible = 150;
+    if (elementTop < windowHeight - elementVisible) {
+      reveals[i].classList.add("active");
+    } else {
+      reveals[i].classList.remove("active");
+    }
   }
 }
 
@@ -105,7 +105,7 @@ cursor.classList.add('cursor');
 document.body.appendChild(cursor);
 
 document.addEventListener('mousemove', e => {
-  cursor.setAttribute("style", "top: "+(e.pageY - 10)+"px; left: "+(e.pageX - 10)+"px;")
+  cursor.setAttribute("style", "top: " + (e.pageY - 10) + "px; left: " + (e.pageX - 10) + "px;")
 })
 
 document.addEventListener('click', () => {
@@ -130,4 +130,52 @@ function typeWriter(text, i = 0) {
 // Start typing effect when the page loads
 window.addEventListener('load', () => {
   typeWriter(text);
+  addClickEffect();
+  fadeEffect();
 });
+
+function addClickEffect() {
+  const fancyText = document.querySelector('.fancy-text');
+  fancyText.addEventListener('click', function (e) {
+    const ripple = document.createElement('span');
+    ripple.classList.add('ripple');
+    this.appendChild(ripple);
+    const x = e.clientX - e.target.offsetLeft;
+    const y = e.clientY - e.target.offsetTop;
+    ripple.style.left = `${x}px`;
+    ripple.style.top = `${y}px`;
+    setTimeout(() => {
+      ripple.remove();
+    }, 300);
+  });
+}
+
+function fadeEffect() {
+  const fadeText = document.getElementById('fade-text');
+  const texts = [
+    "Driving data-driven decision-making and innovative solutions.",
+    "Building robust and scalable machine learning models.",
+    "Passionate about unlocking the power of data."
+  ];
+  let currentIndex = 0;
+
+  function fadeInOut() {
+    fadeText.classList.remove('fade-in');
+    fadeText.classList.add('fade-out');
+
+    setTimeout(() => {
+      fadeText.textContent = texts[currentIndex];
+      fadeText.classList.remove('fade-out');
+      fadeText.classList.add('fade-in');
+
+      currentIndex = (currentIndex + 1) % texts.length;
+    }, 500); // Half of the total transition time
+  }
+
+  // Initial text display
+  fadeText.textContent = texts[0];
+  fadeText.classList.add('fade-in');
+
+  // Start the fade cycle
+  setInterval(fadeInOut, 4500); // Total time for each text display (3s display + 1s transition)
+}

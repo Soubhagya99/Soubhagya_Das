@@ -169,11 +169,21 @@ nav .nav-links li a:hover {
     left: 2px;
     top: 2px;
     border-radius: 50%;
-    transition: transform 0.2s linear;
+    transition: transform 0.2s linear, box-shadow 0.2s linear;
+}
+
+.checkbox-label .ball:hover {
+    box-shadow: 0 0 20px rgb(0, 0, 0);
+    /* Enhanced glow on hover */
 }
 
 .dark-mode .checkbox-label .ball {
     background-color: #333;
+}
+
+.dark-mode .checkbox-label .ball:hover {
+    box-shadow: 0 0 20px rgb(255, 255, 255);
+    /* Enhanced glow on hover in dark mode */
 }
 
 .checkbox:checked+.checkbox-label .ball {
@@ -272,6 +282,52 @@ nav .nav-links li a:hover {
     }
 }
 
+.fancy-text {
+    display: inline-block;
+    position: relative;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.fancy-text:hover {
+    /* color: #0073e6; */
+    text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.fancy-text::before,
+.fancy-text::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background-color: #757474;
+    transition: all 0.3s ease;
+}
+
+.fancy-text::before {
+    top: 0;
+    left: 0;
+}
+
+.fancy-text::after {
+    bottom: 0;
+    right: 0;
+}
+
+.fancy-text:hover::before,
+.fancy-text:hover::after {
+    width: 100%;
+}
+
+.dark-mode .fancy-text:hover {
+    /* color: #5daaf7; */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.623);
+}
+
+.dark-mode .fancy-text::before,
+.dark-mode .fancy-text::after {
+    background-color: #0073e6;
+}
 
 /* Hero Section */
 .hero {
@@ -302,10 +358,16 @@ nav .nav-links li a:hover {
 }
 
 .hero h2 {
-    font-size: 2.5em;
+    font-size: clamp(1.8em, 2.5vw, 2.5em);
     color: #2c2c2c;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
     transition: color 0.3s ease;
+    white-space: nowrap;
+    /* Prevents wrapping */
+    overflow: hidden;
+    /* Hide any overflow */
+    text-overflow: ellipsis;
+    /* Adds ellipsis if text overflows */
 }
 
 body.dark-mode .hero h2 {
@@ -347,35 +409,50 @@ body.dark-mode .hero p {
     background: #0073e6;
     color: #fff;
     transform: scale(1.1);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
 }
 
 body.dark-mode .hero .cta a:hover {
     color: #0073e6;
     background: #fff;
     transform: scale(1.1);
+    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.6);
 }
 
 @media screen and (max-width: 768px) {
     .hero img {
         width: 200px;
-        /* Further reduced size for mobile */
         height: 200px;
     }
 
     .hero h2 {
-        font-size: 1.8em;
-        /* Further reduced for mobile */
+        font-size: clamp(1.5em, 3vw, 1.8em);
+        /* Responsive font size adjustment */
     }
 
     .hero p {
         font-size: 1em;
-        /* Further reduced for mobile */
     }
 
     .hero .cta a {
         padding: 8px 16px;
         font-size: 0.9em;
     }
+}
+
+#fade-text {
+    min-height: 1.5em;
+    margin-bottom: 20px;
+    opacity: 0;
+    transition: opacity 0.5s ease-in-out;
+}
+
+#fade-text.fade-in {
+    opacity: 1;
+}
+
+#fade-text.fade-out {
+    opacity: 0;
 }
 
 /* Sections */
@@ -527,14 +604,13 @@ body.dark-mode .view-credential {
     bottom: 30px;
     right: 30px;
     background: #0073e6;
-    color: #b8b8b8;
+    color: #ffffff;
     padding: 10px 15px;
     border-radius: 50%;
     text-align: center;
     font-size: 1.5em;
     cursor: pointer;
-    transition: background 0.3s ease, transform 0.3s ease;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: background 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
     display: none;
     z-index: 100;
 }
@@ -542,11 +618,22 @@ body.dark-mode .view-credential {
 #back-to-top:hover {
     background: #005bb5;
     transform: scale(1.1);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.8);
 }
 
-/* Show Back to Top Button when Scrolling */
 body.scrolled #back-to-top {
     display: block;
+}
+
+.dark-mode #back-to-top {
+    background: #444444;
+    color: #ffffff;
+}
+
+.dark-mode #back-to-top:hover {
+    background: #222222;
+    transform: scale(1.1);
+    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.555);
 }
 
 /* Contact Form */
@@ -602,12 +689,14 @@ button[type="submit"]:hover {
     background: #0073e6;
     color: #fff;
     transform: scale(1.1);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.4);
 }
 
 .dark-mode button[type="submit"]:hover {
     color: #0073e6;
     background: #fff;
     transform: scale(1.1);
+    box-shadow: 0 3px 10px rgba(255, 255, 255, 0.6);
 }
 
 /* Social Links */
