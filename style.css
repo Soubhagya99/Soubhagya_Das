@@ -26,6 +26,31 @@ body.dark-mode {
     animation: gradient 15s ease infinite;
     background-attachment: fixed;
     color: #d3d3d3;
+    position: relative;
+}
+
+body.dark-mode::before {
+    content: '';
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background:
+        radial-gradient(circle at 20% 20%, rgba(40, 60, 150, 0.2) 0%, transparent 40%),
+        radial-gradient(circle at 80% 80%, rgba(100, 30, 150, 0.2) 0%, transparent 40%);
+    animation: backgroundShift 20s ease infinite alternate;
+    z-index: -1;
+}
+
+@keyframes backgroundShift {
+    0% {
+        background-position: 0% 0%;
+    }
+
+    100% {
+        background-position: 100% 100%;
+    }
 }
 
 /* Header */

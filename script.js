@@ -114,3 +114,20 @@ document.addEventListener('click', () => {
     cursor.classList.remove("expand");
   }, 500)
 })
+
+// Animated typing effect for hero section
+const heroText = document.querySelector('.hero h2');
+const text = heroText.textContent;
+heroText.textContent = '';
+
+function typeWriter(text, i = 0) {
+  if (i < text.length) {
+    heroText.textContent += text.charAt(i);
+    setTimeout(() => typeWriter(text, i + 1), 100);
+  }
+}
+
+// Start typing effect when the page loads
+window.addEventListener('load', () => {
+  typeWriter(text);
+});
