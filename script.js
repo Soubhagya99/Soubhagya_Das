@@ -179,3 +179,51 @@ function fadeEffect() {
   // Start the fade cycle
   setInterval(fadeInOut, 4500); // Total time for each text display (3s display + 1s transition)
 }
+
+// Particle effect for dark mode
+function createParticles() {
+  const particlesContainer = document.createElement('div');
+  particlesContainer.classList.add('particles');
+  document.body.appendChild(particlesContainer);
+
+  for (let i = 0; i < 50; i++) {
+    const particle = document.createElement('div');
+    particle.classList.add('particle');
+    particle.style.left = Math.random() * 100 + 'vw';
+    particle.style.top = Math.random() * 100 + 'vh';
+    particle.style.width = Math.random() * 5 + 'px';
+    particle.style.height = particle.style.width;
+    particlesContainer.appendChild(particle);
+
+    animateParticle(particle);
+  }
+}
+
+function animateParticle(particle) {
+  const duration = Math.random() * 3 + 2;
+  const keyframes = [
+    { transform: 'translate(0, 0)' },
+    { transform: `translate(${Math.random() * 200 - 100}px, ${Math.random() * 200 - 100}px)` }
+  ];
+  const animation = particle.animate(keyframes, {
+    duration: duration * 1000,
+    iterations: Infinity,
+    direction: 'alternate',
+    easing: 'ease-in-out'
+  });
+
+  animation.onfinish = () => animateParticle(particle);
+}
+
+// Call createParticles when switching to dark mode
+const darkModeToggle = document.getElementById('dark-light-toggle');
+darkModeToggle.addEventListener('change', () => {
+  if (darkModeToggle.checked) {
+    createParticles();
+  } else {
+    const particles = document.querySelector('.particles');
+    if (particles) {
+      particles.remove();
+    }
+  }
+});
