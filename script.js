@@ -227,3 +227,31 @@ darkModeToggle.addEventListener('change', () => {
     }
   }
 });
+
+function setRandomBirdHeights() {
+  const birdContainers = document.querySelectorAll('.bird-container');
+  const isMobile = window.innerWidth <= 768; // Check if the screen width is 768px or less
+
+  birdContainers.forEach((container, index) => {
+      if (isMobile && index > 1) {
+          // Hide the bird containers if more than two on mobile
+          container.style.display = 'none';
+      } else {
+          // Set a random height above a minimum threshold (e.g., 20% of the viewport height)
+          container.style.display = 'block'; // Ensure it's visible in desktop view
+          const minHeight = 10; // Minimum height in viewport percentage
+          const maxHeight = 50; // Maximum height in viewport percentage
+          const randomHeight = Math.floor(Math.random() * (maxHeight - minHeight + 1)) + minHeight;
+          container.style.top = randomHeight + 'vh';
+      }
+  });
+}
+
+// Call the function on page load and when switching to light mode
+window.onload = setRandomBirdHeights;
+window.onresize = setRandomBirdHeights; // Adjust on window resize
+document.getElementById('dark-light-toggle').addEventListener('change', function() {
+  if (!this.checked) { // light mode
+      setRandomBirdHeights();
+  }
+});

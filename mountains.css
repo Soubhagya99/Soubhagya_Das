@@ -9,7 +9,7 @@
     border-left: 180px solid transparent; /*left slope of mountain*/
     z-index: -1;
 }
-  
+
 .mountain-shadow {
     position: fixed;
     content: '';
@@ -23,7 +23,7 @@
     transform-origin: top right;
     transform: skewX(18deg);
 }
-  
+
 .mountain-1 {
     position: fixed;
     content: '';
@@ -35,7 +35,7 @@
     border-left: 130px solid transparent; /*left slope of mountain 1*/
     z-index: -1;
 }
-  
+
 .mountain-shadow-1 {
     position: fixed;
     content: '';
@@ -61,7 +61,7 @@
     border-left: 150px solid transparent; /*left slope of mountain 2*/
     z-index: -1;
 }
-  
+
 .mountain-shadow-2 {
     position: fixed;
     content: '';
@@ -78,18 +78,8 @@
 
 .mountain-dark {
     border-bottom: 350px solid #888; /* Adjust color as needed */
-  }
-  
+}
+
 .mountain-shadow-dark {
     border-bottom: 350px solid #666; /* Adjust color as needed */
 }
-  
-/* @media (prefers-color-scheme: dark) {
-    .mountain {
-      border-bottom: 350px solid #888;
-    }
-  
-    .mountain-shadow {
-      border-bottom: 350px solid #666;
-    }
-*/
