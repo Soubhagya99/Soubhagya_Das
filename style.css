@@ -518,7 +518,6 @@ section ul {
 }
 
 .skills-container,
-.timeline,
 .projects-container,
 .certifications-container,
 .education-container {
@@ -534,8 +533,7 @@ section ul {
 .skill,
 .project,
 .certification,
-.education,
-.timeline-item {
+.education {
     padding: 20px;
     border-radius: 15px;
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
@@ -550,8 +548,7 @@ section ul {
 .skill:hover,
 .project:hover,
 .certification:hover,
-.education:hover,
-.timeline-item:hover {
+.education:hover {
     transform: translateY(-10px);
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
 }
@@ -560,8 +557,7 @@ section ul {
 body.dark-mode .skill,
 body.dark-mode .project,
 body.dark-mode .certification,
-body.dark-mode .education,
-body.dark-mode .timeline-item {
+body.dark-mode .education {
     color: #f4f4f4;
     box-shadow: 0 5px 15px rgba(216, 216, 216, 0.233);
     background: rgba(255, 255, 255, 0.1);
@@ -951,4 +947,144 @@ footer p {
     background: #b3ff00;
     border-radius: 50%;
     opacity: 0.5;
+}
+
+/* TIMELINE CONTAINER */
+.timeline {
+    position: relative;
+    max-width: 1100px;
+    margin: 0px auto;
+    padding: 0;
+}
+
+/* Spine */
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    width: 3px;
+    background: linear-gradient(180deg, #2575fc, #6a11cb);
+    transform: translateX(-50%);
+    border-radius: 3px;
+    box-shadow:
+        0 0 0 3px rgba(37, 117, 252, 0.1),
+        0 0 10px rgba(106, 17, 203, 0.4);
+}
+
+/* DATE CIRCLE on the spine */
+.timeline-date {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #2575fc;
+    color: #fff;
+    font-weight: 600;
+    font-size: 0.85rem;
+    padding: 6px 12px;
+    border-radius: 20px;
+    white-space: nowrap;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    z-index: 2;
+}
+
+/* Timeline Card */
+.timeline-item {
+    position: relative;
+    width: 45%;
+    padding: 20px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(40px);
+    -webkit-backdrop-filter: blur(40px);
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    text-align: left;
+}
+
+/* Alternating Layout */
+.timeline-item.left {
+    left: 0;
+}
+
+.timeline-item.right {
+    left: 55%;
+}
+
+/* Dot Connection Point */
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    top: 28px;
+    width: 14px;
+    height: 14px;
+    background: #2575fc;
+    border: 3px solid white;
+    border-radius: 50%;
+    z-index: 1;
+    box-shadow: 0 0 0 5px rgba(37, 117, 252, 0.15);
+}
+
+.timeline-item.left::before {
+    right: -35px;
+}
+
+.timeline-item.right::before {
+    left: -35px;
+}
+
+/* Title & Content */
+.timeline-item h3 {
+    margin: 0 0 10px;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #166cc2;
+}
+
+.timeline-item ul {
+    padding-left: 20px;
+    margin: 0;
+    color: #333;
+}
+
+/* DARK MODE */
+body.dark-mode .timeline::before {
+    background: linear-gradient(180deg, #5e5ce6, #38b6ff);
+}
+
+body.dark-mode .timeline-date {
+    background: #3e3bda;
+}
+
+body.dark-mode .timeline-item {
+    background: rgba(255, 255, 255, 0.08);
+    color: #f0f0f0;
+}
+
+body.dark-mode .timeline-item h3 {
+    color: #5daaf7;
+}
+
+body.dark-mode .timeline-item ul {
+    color: #ccc;
+}
+
+body.dark-mode .timeline-item::before {
+    background: #6a11cb;
+    border-color: rgba(255, 255, 255, 0.5);
+}
+
+/* Hover Effects for Timeline Items */
+.timeline-item:hover {
+    background: rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    transform: translateY(-7px);
+}
+
+.timeline-item.left:hover,
+.timeline-item.right:hover {
+    background: rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    transform: translateY(-7px);
 }
