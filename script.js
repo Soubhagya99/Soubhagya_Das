@@ -155,7 +155,10 @@ function fadeEffect() {
   const texts = [
     "Driving data-driven decision-making and innovative solutions.",
     "Building robust and scalable machine learning models.",
-    "Passionate about unlocking the power of data."
+    "Passionate about unlocking the power of data.",
+    "Delivering Smart, Fast, and Reliable ML Systems.",
+    "Transforming Data into Actionable Intelligence.",
+    "Powering Innovation Through Scalable Machine Learning."
   ];
   let currentIndex = 0;
 

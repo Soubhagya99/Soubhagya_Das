@@ -599,6 +599,10 @@ body.dark-mode .view-credential {
     vertical-align: middle;
 }
 
+.experience-logo:hover {
+    transform: scale(1.1);
+}
+
 /* Back to Top Button */
 #back-to-top {
     position: fixed;
@@ -953,8 +957,8 @@ footer p {
 .timeline {
     position: relative;
     max-width: 1100px;
-    margin: 0px auto;
-    padding: 0;
+    margin: 0 auto;
+    padding: 0 10px;
 }
 
 /* Spine */
@@ -963,21 +967,26 @@ footer p {
     position: absolute;
     top: 0;
     bottom: 0;
-    left: 50%;
+    left: 35px; /* Aligned with desktop layout */
     width: 3px;
     background: linear-gradient(180deg, #2575fc, #6a11cb);
-    transform: translateX(-50%);
     border-radius: 3px;
     box-shadow:
         0 0 0 3px rgba(37, 117, 252, 0.1),
         0 0 10px rgba(106, 17, 203, 0.4);
 }
 
-/* DATE CIRCLE on the spine */
+/* Timeline Entry Pair (Date + Item) */
+.timeline-entry {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 50px;
+    position: relative;
+}
+
+/* Date Pill */
 .timeline-date {
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    min-width: 120px;
     background: #2575fc;
     color: #fff;
     font-weight: 600;
@@ -987,12 +996,13 @@ footer p {
     white-space: nowrap;
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     z-index: 2;
+    text-align: center;
+    margin-right: 20px;
 }
 
 /* Timeline Card */
 .timeline-item {
-    position: relative;
-    width: 45%;
+    flex: 1;
     padding: 20px;
     background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(40px);
@@ -1003,40 +1013,9 @@ footer p {
     text-align: left;
 }
 
-/* Alternating Layout */
-.timeline-item.left {
-    left: 0;
-}
-
-.timeline-item.right {
-    left: 55%;
-}
-
-/* Dot Connection Point */
-.timeline-item::before {
-    content: '';
-    position: absolute;
-    top: 28px;
-    width: 14px;
-    height: 14px;
-    background: #2575fc;
-    border: 3px solid white;
-    border-radius: 50%;
-    z-index: 1;
-    box-shadow: 0 0 0 5px rgba(37, 117, 252, 0.15);
-}
-
-.timeline-item.left::before {
-    right: -35px;
-}
-
-.timeline-item.right::before {
-    left: -35px;
-}
-
-/* Title & Content */
+/* Typography */
 .timeline-item h3 {
-    margin: 0 0 10px;
+    margin-bottom: 10px;
     font-size: 1.15rem;
     font-weight: 600;
     color: #166cc2;
@@ -1048,7 +1027,14 @@ footer p {
     color: #333;
 }
 
-/* DARK MODE */
+/* Hover Effect */
+.timeline-item:hover {
+    background: rgba(255, 255, 255, 0.18);
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
+    transform: translateY(-7px);
+}
+
+/* Dark Mode Support */
 body.dark-mode .timeline::before {
     background: linear-gradient(180deg, #5e5ce6, #38b6ff);
 }
@@ -1070,21 +1056,24 @@ body.dark-mode .timeline-item ul {
     color: #ccc;
 }
 
-body.dark-mode .timeline-item::before {
-    background: #6a11cb;
-    border-color: rgba(255, 255, 255, 0.5);
-}
+/* Responsive Adjustments */
+@media screen and (max-width: 768px) {
+    .timeline::before {
+        left: 0px;
+    }
 
-/* Hover Effects for Timeline Items */
-.timeline-item:hover {
-    background: rgba(255, 255, 255, 0.18);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-    transform: translateY(-7px);
-}
+    .timeline-entry {
+        flex-direction: column;
+        align-items: flex-start;
+    }
 
-.timeline-item.left:hover,
-.timeline-item.right:hover {
-    background: rgba(255, 255, 255, 0.18);
-    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.2);
-    transform: translateY(-7px);
+    .timeline-date {
+        margin: 0 0 10px -20px;
+        text-align: left;
+    }
+
+    .timeline-item {
+        width: 100%;
+        margin-left: 10px;
+    }
 }
