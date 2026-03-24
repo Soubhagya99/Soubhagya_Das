@@ -4,326 +4,296 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Soubhagya Das | Machine Learning Engineer Portfolio">
+    <meta name="description"
+        content="Soubhagya Das — Machine Learning Engineer specializing in MLOps, Cloud Architecture, and Scalable AI Solutions. 3+ years of experience building production ML systems.">
+    <meta name="author" content="Soubhagya Das">
+    <meta name="keywords" content="Machine Learning, MLOps, Data Science, AI, Portfolio, Soubhagya Das">
     <title>Soubhagya Das | ML Engineer</title>
-    <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+    <!-- Open Graph / Social Sharing -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="Soubhagya Das | Machine Learning Engineer">
+    <meta property="og:description"
+        content="Transforming complex data into actionable intelligence. Specializing in MLOps, Cloud Architecture, and Scalable AI Solutions.">
+    <meta property="og:image" content="images/profile.png">
+    <meta name="twitter:card" content="summary_large_image">
+
+    <!-- Theme & Icons -->
+    <meta name="theme-color" content="#050505">
     <link rel="icon" href="images/favicon.png">
+    <link rel="apple-touch-icon" href="images/favicon.png">
+
+    <!-- FOUC Prevention: Apply saved theme before first paint -->
+    <script>
+        (function () {
+            if (localStorage.getItem('theme') === 'light') {
+                document.documentElement.classList.add('light-mode-pending');
+            }
+        })();
+    </script>
+
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="images/profile.png" as="image">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@300;500;700&display=swap"
+        as="style">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&family=Outfit:wght@300;500;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Soubhagya Das",
+        "jobTitle": "Machine Learning Engineer",
+        "url": "https://soubhagya99.github.io",
+        "sameAs": [
+            "https://www.linkedin.com/in/soubhagya-das/",
+            "https://github.com/Soubhagya99"
+        ],
+        "alumniOf": {
+            "@type": "CollegeOrUniversity",
+            "name": "International Institute of Information Technology, Bhubaneswar"
+        }
+    }
+    </script>
 </head>
 
 <body>
+    <!-- Skip to Content - Accessibility -->
+    <a href="#home" class="skip-link">Skip to main content</a>
 
-    <!-- Header -->
-    <header>
-        <nav>
-            <div class="logo">
-                <h1><span class="fancy-text">Soubhagya Das</span></h1>
-            </div>
-            <div class="nav-controls">
-                <ul class="nav-links">
-                    <li><a href="#home">Home</a></li>
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#experience">Experience</a></li>
-                    <li><a href="#projects">Projects</a></li>
-                    <li><a href="#certifications">Certifications</a></li>
-                    <li><a href="#education">Education</a></li>
-                    <li><a href="#contact">Contact</a></li>
-                </ul>
-                <div class="theme-toggle">
-                    <input type="checkbox" class="checkbox" id="dark-light-toggle">
-                    <label for="dark-light-toggle" class="checkbox-label">
-                        <i class="fas fa-moon"></i>
-                        <i class="fas fa-sun"></i>
-                        <span class="ball"></span>
-                    </label>
-                </div>
-            </div>
-            <div class="hamburger" aria-label="Toggle menu">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
-        </nav>
-    </header>
+    <!-- Background Canvas -->
+    <canvas id="bg-canvas" aria-hidden="true"></canvas>
 
-    <!-- Main Content -->
+    <!-- Custom Interactive Cursor -->
+    <div class="cursor-outer" aria-hidden="true"></div>
+    <div class="cursor-inner" aria-hidden="true"></div>
+
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-progress-container" aria-hidden="true">
+        <div class="scroll-progress-bar"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="glass-nav" aria-label="Main Navigation">
+        <div class="logo">
+            SD<span>.</span>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home" class="active">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+        <div class="nav-actions">
+            <!-- Theme Toggle -->
+            <button id="theme-toggle" aria-label="Toggle Dark Mode">
+                <i class="fas fa-moon"></i>
+            </button>
+            <button class="hamburger" aria-label="Open Menu" aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" role="dialog" aria-label="Mobile Navigation Menu">
+        <ul class="mobile-nav-links">
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#experience">Experience</a></li>
+            <li><a href="#projects">Projects</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#contact">Contact</a></li>
+        </ul>
+    </div>
+
     <main>
-        <!-- Home Section -->
-        <section id="home">
-            <div class="hero">
-                <p><img src="images/profile.png" alt="Soubhagya Das"></p>
-                <h2>Machine Learning Engineer</h2>
-                <p id="fade-text"></p>
-                <div class="cta">
-                    <a href="https://drive.google.com/file/d/1ixrz0r0iD8DVVgpQ2Ol_juAiuAObKyPg/view?usp=sharing" download="Soubhagya_Das_Resume.pdf" class="cta-button">Download Resume</a>
-                    <a href="#contact" class="cta-button">Contact Me</a>
+        <!-- Hero Section -->
+        <section id="home" class="hero-section" aria-label="Hero Introduction">
+            <div class="container hero-container">
+                <div class="hero-content">
+                    <span id="hero-greeting" class="greeting"></span>
+                    <h1 id="hero-name"></h1>
+                    <h2 id="hero-role" class="role">
+                        <span id="typed-role" class="typed-text"></span><span class="cursor-blink">|</span>
+                    </h2>
+                    <p id="hero-bio" class="bio-text">
+                    </p>
+                    <div class="hero-actions">
+                        <div id="hero-buttons" class="hero-buttons"></div>
+                        <div id="hero-social" class="social-links"></div>
+                    </div>
                 </div>
+
+                <div class="hero-image">
+                    <div class="image-wrapper">
+                        <img id="hero-image" src="" alt="Soubhagya Das - ML Engineer">
+                    </div>
+                </div>
+            </div>
+
+            <div class="scroll-down" aria-hidden="true">
+                <div class="mouse">
+                    <div class="wheel"></div>
+                </div>
+                <span class="scroll-text">Scroll</span>
             </div>
         </section>
 
         <!-- About Section -->
-        <section id="about">
-            <h2 class="reveal">About Me</h2>
-            <div class="skills-container">
-                <div class="skill">
-                    <h3>Transforming Data into Value</h3>
-                    <p>I'm a highly motivated Machine Learning Engineer with a strong background in Data Science, Cloud Platforms, and Databricks. I leverage my expertise to drive data-driven decision-making and develop innovative solutions that tackle real-world challenges.</p>
-                    <h3>Motivations & Goals</h3>
-                    <p>I'm driven by the potential of Machine Learning to transform businesses and create a positive impact. My goal is to contribute to a team where I can continuously learn, apply my skills to solve complex problems, and develop innovative solutions that shape the future.</p>
+        <section id="about" class="about-section section" aria-label="About Me">
+            <div class="container">
+                <h2 id="about-title" class="section-title"></h2>
+                <div id="about-content" class="about-content">
+                    <!-- Dynamic Content -->
                 </div>
-                <div class="skill">
-                    <h3>Key Skills & Experience Highlights</h3>
-                    <ul>
-                    <li>3+ years of experience in Machine Learning, including data analysis, model development, and deployment.</li>
-                    <li>Certified Databricks Machine Learning Professional and Associate.</li>
-                    <li>Proven track record of increasing operational efficiency and reducing downtime through ML-powered solutions.</li>
-                    <li>Expertise in Python, Azure, Databricks, PySpark, and popular Machine Learning libraries.</li>
-                    <li>Adept at collaborating with cross-functional teams to identify opportunities for improvement and implement data-driven strategies.</li>
-                    <li>Passionate about staying up-to-date with the latest advancements in the field of Machine Learning.</li>
-                    </ul>
-                </div>    
             </div>
         </section>
 
         <!-- Skills Section -->
-        <section id="skills">
-            <h2 class="reveal">Skills</h2>
-            <div class="skills-container">
-                <div class="skill">
-                    <img src="images/programming.png" class="certification-logo">
-                    <h3>Programming Languages</h3>
-                    <p>Python, PySpark, SQL</p>
-                </div>
-                <div class="skill">
-                    <img src="images/merge.png" class="certification-logo">
-                    <h3>Version Control</h3>
-                    <p>Git, GitHub, Bitbucket</p>
-                </div>
-                <div class="skill">
-                    <img src="images/migration.png" class="certification-logo">
-                    <h3>Cloud Platforms</h3>
-                    <p>Azure, Databricks, Azure DevOps</p>
-                </div>
-                <div class="skill">
-                    <img src="images/database.png" class="certification-logo">
-                    <h3>Data Management</h3>
-                    <p>Databricks, MLflow, Azure Data Factory</p>
-                </div>
-                <div class="skill">
-                    <img src="images/monitor.png" class="certification-logo">
-                    <h3>Data Analysis</h3>
-                    <p>Excel, Matplotlib, Seaborn, Pandas</p>
-                </div>
-                <div class="skill">
-                    <img src="images/machine-learning.png" class="certification-logo">
-                    <h3>Machine Learning</h3>
-                    <p>Model Training, Evaluation, Deployment</p>
+        <section id="skills" class="skills-section section" aria-label="Technical Skills">
+            <div class="container">
+                <h2 id="skills-title" class="section-title"></h2>
+                <div id="skills-grid" class="skills-bento">
+                    <!-- Dynamic Content -->
                 </div>
             </div>
         </section>
 
-        <!-- Experience Section -->
-        <section id="experience">
-            <h2 class="reveal">Experience</h2>
-            <div class="timeline">
-
-                <div class="timeline-entry">
-                    <div class="timeline-date reveal">Jan 2025 – Present</div>
-                    <div class="timeline-item">
-                        <h3>ML Engineer | Tiger Analytics</h3>
-                        <ul>
-                            <li>Designed and implemented MLCore, a platform for full ML lifecycle management, increasing
-                                processing efficiency by 70% and reducing downtime by 30%.</li>
-                            <li>Optimized data workflows using Azure and Databricks, enhancing backend-frontend communication
-                                and processing speed.</li>
-                            <li>Directed model integration into MLCore, improving scalability and performance for client
-                                systems.</li>
-                            <li>Developed automated technical documentation pipelines, cutting manual effort by 70%.</li>
-                            <li>Collaborated across teams to solve complex data issues, improving operational efficiency.</li>
-                            <li>Mentored junior analysts, fostering professional development and enhancing overall team
-                                performance.</li>
-                        </ul>
+        <!-- Experience Section (Timeline) -->
+        <section id="experience" class="experience-section section" aria-label="Work Experience">
+            <div class="container">
+                <h2 id="experience-title" class="section-title"></h2>
+                <div class="timeline">
+                    <div class="timeline-line"></div>
+                    <div id="experience-timeline">
+                        <!-- Dynamic Content -->
                     </div>
                 </div>
-
-                <div class="timeline-entry">
-                    <div class="timeline-date reveal">Jul 2023 – Dec 2024</div>
-                    <div class="timeline-item">
-                        <h3>Senior Analyst | Tiger Analytics</h3>
-                        <ul>
-                            <li>Introduced income logic for user categorization, ensuring efficient data flow for enhanced
-                                segmentation, leading to a 50% increase in targeted strategy effectiveness.</li>
-                            <li>Implemented a robust logging system for an insurance project, enhancing traceability and
-                                reducing manual debugging efforts by 40%, leading to a 15% faster resolution time.</li>
-                            <li>Collaborated with cross-functional teams to identify areas of improvement, leading to a 30%
-                                increase in operational effectiveness.</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <div class="timeline-entry">
-                    <div class="timeline-date reveal">Jul 2022 – Jun 2023</div>
-                    <div class="timeline-item">
-                        <h3>Analyst | Tiger Analytics</h3>
-                        <ul>
-                            <li>Analyzed and optimized key operational drivers using Azure-integrated Databricks, reducing cloud
-                                resource costs by 20% and increasing processing speed by 15%.</li>
-                            <li>Streamlined model deployment across diverse environments using ONNX, cutting deployment time by 40% and reducing errors by 20%.</li>
-                            <li>Led the development and implementation of the Unet model for image segmentation, enhancing data
-                                insights and decision-making.</li>
-                        </ul>
-                        <h3><img src="images/Tiger-Analytics_Logo.png" alt="Tiger-Analytics Logo" class="experience-logo"></h3>
-                    </div>
-                </div>
-
             </div>
         </section>
 
         <!-- Projects Section -->
-        <section id="projects">
-            <h2 class="reveal">Projects</h2>
-            <div class="projects-container">
-                <div class="project">
-                    <style>
-                        h3 {
-                            margin-bottom: 5px; /* Adjust the space below each heading */
-                        }
-                        ul {
-                            margin-top: 0px;
-                            margin-bottom: 10px; /* Adjust the space below each list */
-                        }
-                    </style>
-                    <h3>MLCore Development for Real-Time Data Processing</h3>
-                    <ul>
-                        <li>Spearheaded the creation of the MLCore platform, a comprehensive solution that manages the entire machine learning lifecycle—from data ingestion to model deployment. This platform automated real-time data processing, significantly improving data accuracy and processing speed.</li>
-                        <li>The platform’s modular design allowed for seamless integration of new features, such as enhanced data monitoring and real-time updates, leading to a 70% boost in overall data processing efficiency and a reduction in system downtime by 30%.</li>
-                        <li>This project was critical in setting a new standard for operational efficiency within the organization, directly impacting client satisfaction by ensuring faster, more reliable data-driven decisions.</li>
-                    </ul>
-                </div>
-                <div class="project">
-                    <h3>Unet Model for Image Segmentation</h3>
-                    <ul>
-                        <li>Led the development of a Unet model for image segmentation, improving data analysis accuracy and enabling advanced visual insights.</li>
-                        <li>The model’s deployment enhanced decision-making processes by providing more reliable image-based data.</li>
-                    </ul>
-                    <h3>Customer Segmentation with Azure Databricks</h3>
-                    <ul>
-                        <li>Built a customer segmentation model using Azure Databricks, improving marketing strategies and customer targeting by 30%.</li>
-                        <li>Automated data pipelines and model training processes, reducing manual workload and increasing accuracy.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <!-- Certifications Section -->
-        <section id="certifications">
-            <h2 class="reveal">Certifications</h2>
-            <div class="certifications-container">
-                <div class="certification">
-                    <h3><img src="images/databricks.png" alt="Databricks Logo" class="certification-logo">Databricks Certified Machine Learning Professional</h3>
-                    <p><a href="https://credentials.databricks.com/f035965c-90e5-4e9a-9ab0-2490973d79dc" target="_blank" class="view-credential">View Credential</a> | March 2025 – March 2027</p>
-                </div>
-                <div class="certification">
-                    <h3><img src="images/databricks.png" alt="Databricks Logo" class="certification-logo">Databricks Certified Machine Learning Associate</h3>
-                    <p><a href="https://credentials.databricks.com/89c141fb-4092-457e-8974-26a11635eba4" target="_blank" class="view-credential">View Credential</a> | July 2024 – July 2026</p>
-                </div>
-                <div class="certification">
-                    <h3><img src="images/ta.png" alt="Tiger Analytics Logo" class="certification-logo">Tiger Analytics Certified Analytics Associate</h3>
-                    <p><a href="https://portal.itscredible.com/qr/905326715119" target="_blank" class="view-credential">View Credential</a> | Issued: September 2022</p>
+        <section id="projects" class="projects-section section" aria-label="Featured Projects">
+            <div class="container">
+                <h2 id="projects-title" class="section-title"></h2>
+                <div id="projects-grid" class="projects-stack">
+                    <!-- Dynamic Content -->
                 </div>
             </div>
         </section>
 
         <!-- Education Section -->
-        <section id="education">
-            <h2 class="reveal">Education</h2>
-            <div class="education-container">
-                <div class="education">
-                    <img src="images/IIIT_Bhubaneswar_Logo.png" alt="IIIT Bhubaneswar Logo" class="education-logo">
-                    <h3>Bachelor of Technology in Electrical Telecommuniucation</h3>
-                    <p>International Institute of Information Technology, Bhubaneswar, India | Graduated: 2022</p>
+        <section id="education" class="education-section section" aria-label="Education">
+            <div class="container">
+                <h2 id="education-title" class="section-title"></h2>
+                <div id="education-grid" class="education-grid">
+                    <!-- Dynamic Content -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Certifications -->
+        <section id="certifications" class="section" aria-label="Certifications">
+            <div class="container">
+                <h2 id="certifications-title" class="section-title">Certifications</h2>
+                <div id="certifications-grid" class="certs-grid">
+                    <!-- Dynamic Content -->
                 </div>
             </div>
         </section>
 
         <!-- Contact Section -->
-        <section id="contact">
-            <h2 class="reveal">Contact Me</h2>
-            <form action="https://formspree.io/f/xgvwzwpz" method="POST">
-                <label for="name">Name:</label>
-                <input type="text" id="name" name="name" placeholder="Your Name" required>
+        <section id="contact" class="section" aria-label="Contact Me">
+            <div class="container">
+                <h2 id="contact-title" class="section-title"></h2>
 
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="_replyto" placeholder="Your Email" required>
+                <div class="contact-grid">
+                    <!-- Card 1: Message Form -->
+                    <div class="contact-form-card glass-card">
+                        <h3 class="contact-card-heading">Send a Message</h3>
+                        <p class="contact-card-subtitle">Have a question or want to work together?</p>
+                        <form id="contact-form" action="" method="POST" class="contact-form">
+                            <div class="form-group">
+                                <label for="name">Name</label>
+                                <input type="text" id="name" name="name" required placeholder="John Doe"
+                                    aria-describedby="name-label">
+                            </div>
+                            <div class="form-group">
+                                <label for="email">Email</label>
+                                <input type="email" id="email" name="_replyto" required placeholder="john@example.com"
+                                    aria-describedby="email-label">
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea id="message" name="message" required
+                                    placeholder="Let's build something amazing..."
+                                    aria-describedby="message-label"></textarea>
+                            </div>
+                            <button type="submit" class="btn primary-btn submit-btn">
+                                <span class="btn-content">
+                                    <span class="btn-text">Send Message</span>
+                                    <i class="fas fa-paper-plane"></i>
+                                </span>
+                            </button>
+                            <div class="form-feedback" aria-live="polite"></div>
+                        </form>
+                    </div>
 
-                <label for="message">Message:</label>
-                <textarea id="message" name="message" placeholder="Your Message" required></textarea>
-
-                <button type="submit">Send Message</button>
-            </form>
-            <div class="socials">
-                <a href="https://linkedin.com/in/soubhagya-das" target="_blank" aria-label="LinkedIn"><i><img src="images/linkedin.png" class="certification-logo"></i></a>
-                <a href="mailto:soubhagya99.das@gmail.com" aria-label="Email"><i><img src="images/email.png" class="certification-logo"></i></a>
+                    <!-- Card 2: Connect Links -->
+                    <div class="contact-connect-card glass-card">
+                        <h3 class="contact-card-heading">Let's Connect</h3>
+                        <p class="contact-card-subtitle">Prefer a direct conversation? Reach out through any of these
+                            channels.</p>
+                        <div id="contact-links" class="contact-links">
+                            <!-- Dynamic Content -->
+                        </div>
+                        <div class="connect-extras">
+                            <button class="copy-email-btn" onclick="copyEmail(this)" aria-label="Copy email address">
+                                <i class="far fa-copy"></i>
+                                <span>Copy Email Address</span>
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </section>
     </main>
 
+    <footer id="footer" aria-label="Site Footer">
+        <div class="container footer-content">
+            <div class="footer-logo">SD<span>.</span></div>
+            <p id="footer-copyright" class="footer-copyright"></p>
+        </div>
+    </footer>
+
     <!-- Scroll to Top Button -->
-    <button id="back-to-top" aria-label="Scroll to Top">
+    <button id="scroll-top" class="scroll-top-btn" aria-label="Scroll to top">
         <i class="fas fa-arrow-up"></i>
     </button>
 
-    <div class="mountain"></div>
-    <div class="mountain-shadow"></div>
-    <div class="mountain-1"></div>
-    <div class="mountain-shadow-1"></div>
-    <div class="mountain-2"></div>
-    <div class="mountain-shadow-2"></div>
-    <div class="stars"></div>
-    
-    <div id="background-wrap">
-        <div class="x1">
-            <div class="cloud"></div>
-        </div>
-    
-        <div class="x2">
-            <div class="cloud"></div>
-        </div>
-    
-        <div class="x3">
-            <div class="cloud"></div>
-        </div>
-    
-        <div class="x4">
-            <div class="cloud"></div>
-        </div>
-    
-        <div class="x5">
-            <div class="cloud"></div>
-        </div>
-    </div>
-
-    <div>
-        <div class="bird-container bird-container-one">
-            <div class="bird bird-one"></div>
-        </div>
-        <div class="bird-container bird-container-two">
-            <div class="bird bird-two"></div>
-        </div>
-        <div class="bird-container bird-container-three">
-            <div class="bird bird-three"></div>
-        </div>
-        <div class="bird-container bird-container-four">
-            <div class="bird bird-four"></div>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    <footer>
-        <p>&copy; 2025 Soubhagya Das. All Rights Reserved.</p>
-    </footer>
-
+    <!-- Config must be loaded before script.js -->
+    <script src="config.js"></script>
     <script src="script.js"></script>
 </body>
 
